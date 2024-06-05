@@ -1,59 +1,59 @@
 function calcular() {
- var anos = document.getElementsByid("anos").value;
-var meses = document.getElementsByid("meses").value;
-var anos1 = document.getElementsByid("anos1").value;
-var meses2 = document.getElementsByid("meses2").value;
-var trisal1 = document.getElementsByid("trisal1").value;
-var trisal2 = document.getElementsByid("trisal2").value;
+var anivesario1 = document.getElementsByid("anivesario1").value;
+var mês1 = document.getElementsByid("mês1").value;
+var anivesario2 = document.getElementsByid("anivesario2").value;
+var mês2 = document.getElementsByid("mês2").value;
+var trissal = document.getElementsByid("trissal").value;
+var trisssal = document.getElementsByid("trisssal").value;
 
-if (trisal =!"" && trisal2 != "") {
-if (meses !="" && meses >= 6){
-anos++
+if (trissal =!"" && trisssal2 != "") {
+if (mês1 !="" && mês1 >= 6){
+	anivesario1++
 }
-if (meses !="" && meses >= 6){
-anos1++
+if (mês1 !="" && mês1 >= 6){
+	anivesario2++
 }
-if (trisal2 !="" && trisal2 >= 6){
-anostrial++
+if (trisssal2 !="" && trisssal2 >= 6){
+trissal++
 }
-var trisal3 = podeNamorarTrisal(anos, anos1, trisal1, 1)
-var trisal4 = podeNamorarTrisal(anos1, anos, trisal1, 2)
-var trisal5 = podeNamorarTrisal(trisal, anos, anos1, 3)
+var trisal1 = permitoNamoro(anivesario1, anivesario2, trissal, 1)
+var trisal2 = permitoNamoro(anivesario2, anivesario1, trisssal, 2)
+var trisal3 = permitoNamoro(trissal, anivesario1, anivesario2, 3)
 console.log(trisal1, trisal2, trisal3)
 if ((trisal3 == true) && (trisal4 == true) && (trisal5 == true)){
-alert("Voces podem namora")
+alert("Permito o Namoro")
 } else {
-	alert("voces nao podem namorar")
+alert("Nâo Permito o Namoro ")
 }
 } else {
-	if (meses !="" && meses >= 6){
+	if (mês1 !="" && mês1 >= 6){
 }
-anos++
+anivesario1++
+}
+if (mês2 !="" && mês2 >= 6){
+	anivesario2++
 	}
-	if (meses1 !="" && meses1 >= 6){
-anos1++
-	}
-	var podenamorar1 = podenamorar(anos, anos1, 1)
-	var podenamorar2 = podenamorar(anos, anos1, 2)
-	if (podenamorar1 == true && podenamorar2 == true){
-alert("podem namorar")
+	var namorar1 = namorar(anos, anos1, 1)
+	var namorar2 = namorar(anos, anos1, 2)
+	if (namorar1 == true && namorar2 == true){
+alert("Parabens Podem Namora")
 	} else {
-		alert("voces nao podem namorar")
+		alert("Nâo Podem namorar")
 }
 }
 
-function podenamorar(idade, parceiro, numeropretendente){
+function namorar(idade, parceiro, pretendente){
 var min = (idade /2) + 7;
 var max = (idade - 7) * 2;
 if (min % 2 != 0) {
 min = math.floor(min);
 }
 if (idade <= 13){
-alert(`sem namoro amigo${numeropretendente}`)
+alert(`Espere Mais Alguns Anos ${pretendente}`)
 return false
 }
 if (idade >= 100){
-alert(`ta proibido parceiro${numeropretendente}`)
+alert(`Voçê Não Pode Namora Por causa da Lei ${pretendente}`)
 return false
 }
 
@@ -65,18 +65,18 @@ return false
 }
 }
 
-function podeNamorarTrisal(idade, parceiro1, parceiro2, numeropretendente){
+function NamorarTrisal(idade, parceiro1, parceiro2, pretendente){
 var min = (idade / 2) + 7;
 var max = (idade - 7) * 2;
 if (min % 2 != 0){
 min = math.floor(min);
 }
 if (idade <= 13){
-alert(`o parceiro ${numeropretendente} pode namorar nao`)
+alert(`Espere Mais Alguns Anos ${pretendente}`)
 return false
 } else
 if (idade >= 100) {
-alert(`ta proibido parceiro${numeropretendente}`)
+alert(`Voçê Não Pode Namora Por causa da Lei ${numeropretendente}`)
 return false
 }
 else if ((parceiro1 >= min && parceiro1 <= max) && (parceiro2 >= min && parceiro2 <= max)){
@@ -88,11 +88,11 @@ return false
 }
 
 function buttoncasal() {
-document.getElementsByid("trisal6").hidden = true
-document.getElementsByid("trisal1").required = false
-document.getElementsByid("trisal2").required = false
+document.getElementsByid("trissssal").hidden = true
+document.getElementsByid("trissal").required = false
+document.getElementsByid("trisssal").required = false
 }
 function buttontrisal() {
 document.getElementsByid("trisal6").hidden = false
-document.getElementsByid("trisal1").required = true
+document.getElementsByid("trissal").required = true
 }
